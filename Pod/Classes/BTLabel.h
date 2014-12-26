@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
 
 
 /**
- UILabel subclass with vertical text alignment and height calculation.
+ UILabel subclass with vertical text alignment, insets and height calculation.
  */
 @interface BTLabel : UILabel
 

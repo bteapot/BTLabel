@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/BTLabel.svg?style=flat)](http://cocoadocs.org/docsets/BTLabel)
 [![Platform](https://img.shields.io/cocoapods/p/BTLabel.svg?style=flat)](http://cocoadocs.org/docsets/BTLabel)
 
-UILabel subclass with vertical text alignment and height calculation.
+UILabel subclass with vertical text alignment, insets and height calculation.
 
 ![screenshot](http://i.imgur.com/h9YfnlC.png)
 
