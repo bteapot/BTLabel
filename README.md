@@ -6,6 +6,8 @@
 
 UILabel subclass with vertical text alignment and height calculation.
 
+![screenshot](http://i.imgur.com/h9YfnlC.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
