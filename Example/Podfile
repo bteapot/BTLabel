@@ -4,8 +4,3 @@ target 'BTLabel', :exclusive => true do
   pod "BTLabel", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
-  pod "BTLabel", :path => "../"
-
-  
-end

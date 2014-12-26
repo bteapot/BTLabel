@@ -1,0 +1,14 @@
+PODS:
+  - BTLabel (1.0.0)
+
+DEPENDENCIES:
+  - BTLabel (from `../`)
+
+EXTERNAL SOURCES:
+  BTLabel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BTLabel: a85a005d373723be1f31b85fa20d53e673e353e0
+
+COCOAPODS: 0.35.0

@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "BTLabel"
   s.version          = "1.0.0"
-  s.summary          = "UILabel subclass with vertical text alignment and height calculation."
+  s.summary          = "UILabel subclass with vertical alignment and height calculation."
   s.homepage         = "https://github.com/bteapot/BTLabel"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
