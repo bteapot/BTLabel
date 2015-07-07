@@ -156,7 +156,7 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	UIEdgeInsets edgeInsets = self.edgeInsets;
 	NSInteger numberOfLines = self.numberOfLines;
 	
-	CGSize insettedSize = CGSizeMake(size.width - edgeInsets.left - edgeInsets.right, size.height - edgeInsets.top - edgeInsets.bottom);
+	CGSize insettedSize = CGSizeMake(MAX(size.width - edgeInsets.left - edgeInsets.right, 0), MAX(size.height - edgeInsets.top - edgeInsets.bottom, 0));
 	CGRect rect = [self.attributedText boundingRectWithSize:insettedSize options:kDrawingOptions context:nil];
 	
 	CGFloat width = rect.size.width;
