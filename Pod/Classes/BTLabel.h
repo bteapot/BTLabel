@@ -37,13 +37,21 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
 /// @name Properties
 
 /**
-Insets from the edges of label to a text.
+ Insets from the edges of label to a text.
 */
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
 /**
  Vertical text alignment mode.
  */
 @property (nonatomic, assign) BTVerticalAlignment verticalAlignment;
+/**
+ When set to YES and numberOfLines > 1, receiver will decrease its font size to fit specified number of lines into current bounds. Font size will be reduced by no more than minimumScaleFactor.
+ */
+@property (nonatomic, assign) BOOL decreasesFontSizeToFitNumberOfLines;
+/**
+ When set to YES and numberOfLines > 1, receiver will increase its font size to fit specified number of lines into current bounds.
+ */
+@property (nonatomic, assign) BOOL increasesFontSizeToFitNumberOfLines;
 
 
 #pragma mark - Height of arbitrary text

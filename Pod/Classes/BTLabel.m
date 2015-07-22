@@ -9,6 +9,13 @@
 #import "BTLabel.h"
 
 
+@interface BTLabel ()
+
+@property (nonatomic, strong) UIFont *correctedFont;
+
+@end
+
+
 @implementation BTLabel
 
 const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine;
@@ -200,34 +207,53 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	UIEdgeInsets edgeInsets = self.edgeInsets;
 	CGRect insettedBounds = UIEdgeInsetsInsetRect(bounds, edgeInsets);
 	CGRect textRect = CGRectZero;
-	BOOL adjustsFontSizeToFitWidth = self.adjustsFontSizeToFitWidth && numberOfLines == 1;
 	
-	if (adjustsFontSizeToFitWidth) {
-		textRect.size = [self.attributedText size];
+	self.correctedFont = nil;
+	UIFont *originalFont;
+	
+	if (self.adjustsFontSizeToFitWidth && numberOfLines == 1) {
+		textRect.size = CGSizeMake([self.attributedText size].width, self.font.lineHeight);
+		
+		// не влезает?
+		if (textRect.size.width > insettedBounds.size.width) {
+			
+			// сохраним текущий шрифт
+			originalFont = self.font;
+			CGFloat originalPointSize = originalFont.pointSize;
+			
+			// вычислим коэффициент уменьшения
+			CGFloat ratio = insettedBounds.size.width / textRect.size.width;
+			
+			// предполагаемый кегель шрифта
+			CGFloat currentFontSize = originalPointSize * MAX(ratio, self.minimumScaleFactor);
+			self.font = [UIFont fontWithName:originalFont.fontName size:currentFontSize];
+			textRect.size = CGSizeMake(MIN([self.attributedText size].width, insettedBounds.size.width), MIN(self.font.lineHeight, insettedBounds.size.height));
+		}
 	} else {
+		BOOL decreasesFontSizeToFitNumberOfLines = self.decreasesFontSizeToFitNumberOfLines && numberOfLines > 1;
+		BOOL increasesFontSizeToFitNumberOfLines = self.increasesFontSizeToFitNumberOfLines && numberOfLines > 1;
+		
+		if (decreasesFontSizeToFitNumberOfLines || increasesFontSizeToFitNumberOfLines) {
+			CGFloat maxHeight = ceilf(self.font.lineHeight * numberOfLines);
+			CGFloat ratio = MAX(insettedBounds.size.height / maxHeight, self.minimumScaleFactor);
+			
+			if ((decreasesFontSizeToFitNumberOfLines && ratio < 1) ||
+				(increasesFontSizeToFitNumberOfLines && ratio > 1)) {
+				originalFont = self.font;
+				self.font = [self.font fontWithSize:originalFont.pointSize * ratio];
+			}
+		}
+		
 		textRect = [self.attributedText boundingRectWithSize:insettedBounds.size options:kDrawingOptions context:nil];
+	}
+	
+	if (originalFont) {
+		self.correctedFont = self.font;
+		self.font = originalFont;
 	}
 	
 	CGFloat textWidth = ceilf(textRect.size.width);
 	CGFloat textHeight = ceilf(textRect.size.height);
-	
-	if (!adjustsFontSizeToFitWidth) {
-		if (textWidth > insettedBounds.size.width) {
-			textWidth = insettedBounds.size.width;
-		}
-		
-		if (textHeight > insettedBounds.size.height) {
-			textHeight = insettedBounds.size.height;
-		}
-	}
-	
-	if (numberOfLines > 0) {
-		CGFloat maxHeight = ceilf(self.font.lineHeight * numberOfLines);
-		
-		if (textHeight > maxHeight) {
-			textHeight = maxHeight;
-		}
-	}
 	
 	CGFloat originX;
 	CGFloat originY;
@@ -275,33 +301,13 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 // -----------------------------------------------------------------------------
 - (void)drawTextInRect:(CGRect)rect
 {
-	NSInteger numberOfLines = self.numberOfLines;
+	CGRect textRect = [self textRectForBounds:rect limitedToNumberOfLines:self.numberOfLines];
 	
-	CGRect textRect = [self textRectForBounds:rect limitedToNumberOfLines:numberOfLines];
+	UIFont *originalFont;
 	
-	UIFont *savedFont;
-	
-	// надо уменьшать текст, ежели чего?
-	if (self.adjustsFontSizeToFitWidth && numberOfLines == 1) {
-		
-		CGRect insettedRect = UIEdgeInsetsInsetRect(rect, self.edgeInsets);
-		
-		// не влезает?
-		if (textRect.size.width > insettedRect.size.width || textRect.size.height > insettedRect.size.height) {
-			
-			// сохраним текущий шрифт
-			savedFont = self.font;
-			CGFloat savedPointSize = savedFont.pointSize;
-			
-			// вычислим коэффициент уменьшения
-			CGFloat ratio = MIN(insettedRect.size.width / textRect.size.width, insettedRect.size.height / textRect.size.height);
-			
-			// предполагаемый кегель шрифта
-			CGFloat currentFontSize = MAX(savedPointSize * ratio, savedPointSize * self.minimumScaleFactor);
-			
-			self.font = [UIFont fontWithName:savedFont.fontName size:currentFontSize];
-			textRect = [self textRectForBounds:rect limitedToNumberOfLines:numberOfLines];
-		}
+	if (self.correctedFont) {
+		originalFont = self.font;
+		self.font = self.correctedFont;
 	}
 	
 	// рисуем
@@ -314,8 +320,9 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	}
 	
 	// надо восстановить шрифт?
-	if (savedFont) {
-		self.font = savedFont;
+	if (self.correctedFont) {
+		self.font = originalFont;
+		self.correctedFont = nil;
 	}
 }
 
