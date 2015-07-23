@@ -20,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		16E8E6A01CBBDED29744AEEC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1C3CAB0387544394A6617C0B /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3ECACB7997499C80498FADF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5988D5536E1859080AEC6EC0 /* libPods-BTLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTLabel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* BTLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,7 +33,6 @@
 		6003F59C195388D20070C39A /* BTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* BTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		676156CBAB60209359AD07F7 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7BA4F584E3AD9146B9061FEC /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86065813C8A6E1DF98CF3DAC /* BTLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BTLabel.podspec; path = ../BTLabel.podspec; sourceTree = "<group>"; };
 		92C662181A4D7B2400734FF1 /* BTRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRootVC.h; sourceTree = "<group>"; };
@@ -128,8 +126,6 @@
 			children = (
 				C2642C1129B50FF1BF8F2EFB /* Pods-BTLabel.debug.xcconfig */,
 				A87DBE16AA830D87A41927B3 /* Pods-BTLabel.release.xcconfig */,
-				1C3CAB0387544394A6617C0B /* Pods-Tests.debug.xcconfig */,
-				676156CBAB60209359AD07F7 /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";

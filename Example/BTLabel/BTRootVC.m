@@ -160,15 +160,14 @@
 	CGFloat topMargin = 20;
 	CGFloat inset = 10;
 	
-	NSArray *labels = self.view.subviews;
-	NSUInteger sideCount = ceil(sqrt(labels.count));
+	NSUInteger sideCount = ceil(sqrt(self.labels.count));
 	
 	CGFloat labelWidth = (bounds.size.width - inset) / sideCount - inset;
 	CGFloat labelHeight = (bounds.size.height - topMargin - inset) / sideCount - inset;
 	
 	NSUInteger index = 0;
 	
-	for (BTLabel *label in labels) {
+	for (BTLabel *label in self.labels) {
 		label.frame = CGRectMake(inset + (labelWidth + inset) * (index % sideCount),
 								 topMargin + inset + (labelHeight + inset) * (index / sideCount),
 								 labelWidth,

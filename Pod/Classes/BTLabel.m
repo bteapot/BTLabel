@@ -163,7 +163,7 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	UIEdgeInsets edgeInsets = self.edgeInsets;
 	NSInteger numberOfLines = self.numberOfLines;
 	
-	CGSize insettedSize = CGSizeMake(MAX(size.width - edgeInsets.left - edgeInsets.right, 0), MAX(size.height - edgeInsets.top - edgeInsets.bottom, 0));
+	CGSize insettedSize = CGSizeMake(MAX(size.width - edgeInsets.left - edgeInsets.right, 0), CGFLOAT_MAX);
 	CGRect rect = [self.attributedText boundingRectWithSize:insettedSize options:kDrawingOptions context:nil];
 	
 	CGFloat width = rect.size.width;
@@ -172,8 +172,12 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	if (numberOfLines > 0) {
 		CGFloat maxHeight = self.font.lineHeight * numberOfLines;
 		
-		if (height > maxHeight) {
+		if (numberOfLines > 1 && (self.decreasesFontSizeToFitNumberOfLines || self.increasesFontSizeToFitNumberOfLines)) {
 			height = maxHeight;
+		} else {
+			if (height > maxHeight) {
+				height = maxHeight;
+			}
 		}
 	}
 	
@@ -206,6 +210,15 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 {
 	UIEdgeInsets edgeInsets = self.edgeInsets;
 	CGRect insettedBounds = UIEdgeInsetsInsetRect(bounds, edgeInsets);
+	
+	if (insettedBounds.size.width < 0) {
+		insettedBounds.size.width = 0;
+	}
+	
+	if (insettedBounds.size.height < 0) {
+		insettedBounds.size.height = 0;
+	}
+	
 	CGRect textRect = CGRectZero;
 	
 	self.correctedFont = nil;
@@ -245,6 +258,14 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 		}
 		
 		textRect = [self.attributedText boundingRectWithSize:insettedBounds.size options:kDrawingOptions context:nil];
+		
+		if (numberOfLines > 0) {
+			CGFloat maxHeight = self.font.lineHeight * numberOfLines;
+			
+			if (textRect.size.height > maxHeight) {
+				textRect.size.height = maxHeight;
+			}
+		}
 	}
 	
 	if (originalFont) {
