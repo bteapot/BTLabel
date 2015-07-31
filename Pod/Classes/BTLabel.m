@@ -315,7 +315,7 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 			break;
 	}
 	
-	return CGRectMake(originX, originY, textWidth, textHeight);
+	return CGRectIntersection(insettedBounds, CGRectMake(originX, originY, textWidth, textHeight));
 }
 
 //
@@ -323,6 +323,11 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 - (void)drawTextInRect:(CGRect)rect
 {
 	CGRect textRect = [self textRectForBounds:rect limitedToNumberOfLines:self.numberOfLines];
+	
+	// нулевая ширина или высота?
+	if (textRect.size.width == 0 || textRect.size.height == 0) {
+		return;
+	}
 	
 	UIFont *originalFont;
 	
