@@ -71,6 +71,34 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 
 //
 // -----------------------------------------------------------------------------
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	
+	if (self) {
+		self.edgeInsets = [aDecoder decodeUIEdgeInsetsForKey:NSStringFromSelector(@selector(edgeInsets))];
+		self.verticalAlignment = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(verticalAlignment))];
+		self.decreasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
+		self.increasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
+	}
+	
+	return self;
+}
+
+//
+// -----------------------------------------------------------------------------
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+	[super encodeWithCoder:aCoder];
+	
+	[aCoder encodeUIEdgeInsets:self.edgeInsets forKey:NSStringFromSelector(@selector(edgeInsets))];
+	[aCoder encodeInteger:self.verticalAlignment forKey:NSStringFromSelector(@selector(verticalAlignment))];
+	[aCoder encodeBool:self.decreasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
+	[aCoder encodeBool:self.increasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
+}
+
+//
+// -----------------------------------------------------------------------------
 - (void)updateContentMode
 {
 	switch (self.verticalAlignment) {

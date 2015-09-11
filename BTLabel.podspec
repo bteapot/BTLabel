@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BTLabel"
-  s.version          = "1.1.2"
+  s.version          = "1.1.3"
   s.summary          = "UILabel subclass with vertical text alignment, insets and height calculation."
   s.homepage         = "https://github.com/bteapot/BTLabel"
   s.screenshots      = "http://i.imgur.com/h9YfnlC.png"
@@ -12,7 +12,4 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
-  s.resource_bundles = {
-    'BTLabel' => ['Pod/Assets/*.png']
-  }
 end

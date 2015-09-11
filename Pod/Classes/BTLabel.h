@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
  @param edgeInsets The geometric padding for the text inside the label view, in points.
  @return An initialized view object or nil if the object couldn't be created.
  */
-- (instancetype)initWithFrame:(CGRect)frame edgeInsets:(UIEdgeInsets)edgeInsets NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFrame:(CGRect)frame edgeInsets:(UIEdgeInsets)edgeInsets;
 
 
 #pragma mark - Height of receiver's text
