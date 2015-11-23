@@ -1,15 +1,15 @@
 //
-//  BTRootVC.m
-//  BTInfiniteScrollView
+//  BTLabelVC.m
+//  BTLabel
 //
 //  Created by Денис Либит on 12/22/2014.
 //  Copyright (c) 2014 Денис Либит. All rights reserved.
 //
 
-#import "BTRootVC.h"
+#import "BTLabelVC.h"
 
 
-@interface BTRootVC ()
+@interface BTLabelVC ()
 
 @property (nonatomic, strong) NSMutableArray *labels;
 @property (nonatomic, strong) NSMutableArray *texts;
@@ -23,7 +23,25 @@
 @end
 
 
-@implementation BTRootVC
+@implementation BTLabelVC
+
+#pragma mark - Initialization
+
+//
+// -----------------------------------------------------------------------------
+- (instancetype)init
+{
+	self = [super init];
+	
+	if (self) {
+		self.title = @"Labels";
+		self.edgesForExtendedLayout = UIRectEdgeNone;
+		self.tabBarItem.image = [UIImage imageNamed:@"icon-label"];
+	}
+	
+	return self;
+}
+
 
 #pragma mark - Lifecycle
 
