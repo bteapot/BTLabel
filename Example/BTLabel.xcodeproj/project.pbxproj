@@ -36,6 +36,7 @@
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7BA4F584E3AD9146B9061FEC /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86065813C8A6E1DF98CF3DAC /* BTLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BTLabel.podspec; path = ../BTLabel.podspec; sourceTree = "<group>"; };
+		922D2F061C058EC10092B932 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		9244230C1C01199800D67D42 /* BTTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTableVC.h; sourceTree = "<group>"; };
 		9244230D1C01199800D67D42 /* BTTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTableVC.m; sourceTree = "<group>"; };
 		92C662181A4D7B2400734FF1 /* BTLabelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabelVC.h; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 			children = (
 				86065813C8A6E1DF98CF3DAC /* BTLabel.podspec */,
 				16E8E6A01CBBDED29744AEEC /* README.md */,
+				922D2F061C058EC10092B932 /* CHANGELOG.md */,
 				3ECACB7997499C80498FADF5 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
