@@ -28,7 +28,7 @@ label.verticalAlignment = BTVerticalAlignmentCenter;
 label.textAlignment = NSTextAlignmentLeft;
 ```
 
-#### Using whithin UITableViewCell:
+#### Using within UITableViewCell:
 
 ```objective-c
 // in interface
