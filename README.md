@@ -21,8 +21,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 #### Simple initialization:
 
 ```objective-c
-BTLabel *label = [[BTLabel alloc] initWithFrame:CGRectMake(10, 10, 300, 80);
-edgeInsets:UIEdgeInsetsMake(10, 20, 10, 10)];
+BTLabel *label = [[BTLabel alloc] initWithFrame:CGRectMake(10, 10, 300, 80) edgeInsets:UIEdgeInsetsMake(10, 20, 10, 10)];
 label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 label.verticalAlignment = BTVerticalAlignmentCenter;
 label.textAlignment = NSTextAlignmentLeft;
