@@ -531,7 +531,7 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 					case NSTextAlignmentCenter:
 					default:
 						imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-											   bounds.origin.y + (bounds.size.height - imageRect.size.height) / 2,
+											   bounds.origin.y + (bounds.size.height - imageSize.height) / 2,
 											   imageSize.width,
 											   imageSize.height);
 						break;

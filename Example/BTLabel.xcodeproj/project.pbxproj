@@ -14,15 +14,14 @@
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* BTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* BTAppDelegate.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		81EDCB72300331DEC6AB528F /* Pods_BTLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0D647EB6DED0431B10CC18 /* Pods_BTLabel.framework */; };
 		9244230E1C01199800D67D42 /* BTTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244230D1C01199800D67D42 /* BTTableVC.m */; };
 		92C6621D1A4D7B2400734FF1 /* BTLabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C662191A4D7B2400734FF1 /* BTLabelVC.m */; };
-		9F4955CCD949E84C9868FA75 /* libPods-BTLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5988D5536E1859080AEC6EC0 /* libPods-BTLabel.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16E8E6A01CBBDED29744AEEC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3ECACB7997499C80498FADF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		5988D5536E1859080AEC6EC0 /* libPods-BTLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTLabel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* BTLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -34,6 +33,7 @@
 		6003F59C195388D20070C39A /* BTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* BTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7B0D647EB6DED0431B10CC18 /* Pods_BTLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BTLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA4F584E3AD9146B9061FEC /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86065813C8A6E1DF98CF3DAC /* BTLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BTLabel.podspec; path = ../BTLabel.podspec; sourceTree = "<group>"; };
 		922D2F061C058EC10092B932 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9F4955CCD949E84C9868FA75 /* libPods-BTLabel.a in Frameworks */,
+				81EDCB72300331DEC6AB528F /* Pods_BTLabel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +85,8 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				5988D5536E1859080AEC6EC0 /* libPods-BTLabel.a */,
 				7BA4F584E3AD9146B9061FEC /* libPods-Tests.a */,
+				7B0D647EB6DED0431B10CC18 /* Pods_BTLabel.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,12 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "BTLabel" */;
 			buildPhases = (
-				CAE7AC028FD0778E665C686F /* Check Pods Manifest.lock */,
+				CAE7AC028FD0778E665C686F /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				7F73AD74171A218D739A2FA4 /* Copy Pods Resources */,
-				B6DC2FCC0AA2B0B356BDFCFA /* Embed Pods Frameworks */,
+				7F73AD74171A218D739A2FA4 /* [CP] Copy Pods Resources */,
+				B6DC2FCC0AA2B0B356BDFCFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,14 +201,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7F73AD74171A218D739A2FA4 /* Copy Pods Resources */ = {
+		7F73AD74171A218D739A2FA4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,14 +216,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTLabel/Pods-BTLabel-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6DC2FCC0AA2B0B356BDFCFA /* Embed Pods Frameworks */ = {
+		B6DC2FCC0AA2B0B356BDFCFA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,19 +231,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTLabel/Pods-BTLabel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CAE7AC028FD0778E665C686F /* Check Pods Manifest.lock */ = {
+		CAE7AC028FD0778E665C686F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,6 +1,11 @@
 # BTLabel CHANGELOG
 
 
+## 1.2.2
+
+Fixed wrong image position with center-right alignment.
+
+
 ## 1.2.1
 
 Added CHANGELOG.

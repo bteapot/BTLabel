@@ -1,6 +1,5 @@
-source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-target 'BTLabel', :exclusive => true do
-  pod "BTLabel", :path => "../"
+target 'BTLabel' do
+  pod 'BTLabel', :path => '../'
 end
-
