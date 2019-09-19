@@ -1,4 +1,4 @@
-use_frameworks!
+platform :ios, 8.0
 
 target 'BTLabel' do
   pod 'BTLabel', :path => '../'

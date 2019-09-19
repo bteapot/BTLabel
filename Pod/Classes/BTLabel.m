@@ -57,10 +57,12 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	// фактическая высота текста
 	CGFloat height;
 	
-	if ([text isKindOfClass:[NSString class]]) {
+	if ([text isKindOfClass:[NSString class]] && font != nil) {
 		height = [text boundingRectWithSize:insettedSize options:kDrawingOptions attributes:@{NSFontAttributeName: font} context:nil].size.height;
-	} else {
+	} else if ([text isKindOfClass:[NSAttributedString class]]) {
 		height = [text boundingRectWithSize:insettedSize options:kDrawingOptions context:nil].size.height;
+	} else {
+		return 0;
 	}
 	
 	// ограничение по количеству линий
@@ -73,7 +75,6 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 	}
 	
 	// прибавим размер полей
-	width	+= edgeInsets.left + edgeInsets.right;
 	height	+= edgeInsets.top + edgeInsets.bottom;
 	
 	// прибавим размер картинки

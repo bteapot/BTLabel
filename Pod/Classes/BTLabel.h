@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Options for aligning text vertically for BTLabel.
  */
@@ -101,7 +103,7 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
  @see heightForWidth:text:font:
  @return Height of given text for given width and parameters.
  */
-+ (CGFloat)heightForWidth:(CGFloat)width text:(id)text font:(UIFont *)font edgeInsets:(UIEdgeInsets)edgeInsets numberOfLines:(NSUInteger)numberOfLines imageSize:(CGSize)imageSize imagePosition:(UIRectEdge)imagePosition imageEdgeInsets:(UIEdgeInsets)imageEdgeInsets;
++ (CGFloat)heightForWidth:(CGFloat)width text:(nullable id)text font:(nullable UIFont *)font edgeInsets:(UIEdgeInsets)edgeInsets numberOfLines:(NSUInteger)numberOfLines imageSize:(CGSize)imageSize imagePosition:(UIRectEdge)imagePosition imageEdgeInsets:(UIEdgeInsets)imageEdgeInsets;
 /**
  Calculates height of arbitrary text with given width.
  @discussion Invokes -heightForWidth:text:font:numberOfLines:edgeInsets:imageSize:imagePosition:imageEdgeInsets: with zero numberOfLines, imageSize, imagePosition и imageEdgeInsets.
@@ -113,7 +115,7 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
  @see heightForWidth:text:font:
  @return Height of given text for given width and parameters.
  */
-+ (CGFloat)heightForWidth:(CGFloat)width text:(id)text font:(UIFont *)font edgeInsets:(UIEdgeInsets)edgeInsets;
++ (CGFloat)heightForWidth:(CGFloat)width text:(nullable id)text font:(nullable UIFont *)font edgeInsets:(UIEdgeInsets)edgeInsets;
 /**
  Calculates height of arbitrary text with given width.
  @discussion Invokes -heightForWidth:text:font:numberOfLines:edgeInsets:imageSize:imagePosition:imageEdgeInsets: with zero edgeInsets, imageSize, imagePosition и imageEdgeInsets. Accepts `NSString` and `NSAttributedString` text. This method returns 'raw' text block height with no padding.
@@ -124,7 +126,7 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
  @see heightForWidth:text:font:edgeInsets:
  @return Height of given text for given width.
  */
-+ (CGFloat)heightForWidth:(CGFloat)width text:(id)text font:(UIFont *)font;
++ (CGFloat)heightForWidth:(CGFloat)width text:(nullable id)text font:(nullable UIFont *)font;
 
 
 #pragma mark - Initialization
@@ -158,3 +160,5 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
 - (CGFloat)heightAdjustedForWidth:(CGFloat)width;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -34,7 +34,7 @@
 	self = [super init];
 	
 	if (self) {
-		self.title = @"Labels";
+		self.title = NSLocalizedString(@"Labels", comment: @"");
 		self.edgesForExtendedLayout = UIRectEdgeNone;
 		self.tabBarItem.image = [UIImage imageNamed:@"icon-label"];
 	}
@@ -117,7 +117,7 @@
 	label.layer.borderColor = color;
 	[self.view addSubview:label];
 	[self.labels addObject:label];
-	[self.texts addObject:[[NSAttributedString alloc] initWithString:@"Attributed text." attributes:attributes]];
+	[self.texts addObject:[[NSAttributedString alloc] initWithString:NSLocalizedString(@"Attributed text.", comment: @"") attributes:attributes]];
 	
 	label = [[BTLabel alloc] initWithFrame:CGRectZero edgeInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
 	label.font = font;

@@ -1,6 +1,11 @@
 # BTLabel CHANGELOG
 
 
+## 1.2.3
+
+A simple Swift compatibility fix.
+Minimum iOS version bumped to 8.0 to silence Xcode 11 warning.
+
 ## 1.2.2
 
 Fixed wrong image position with center-right alignment.

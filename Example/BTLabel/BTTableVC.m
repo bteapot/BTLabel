@@ -45,7 +45,7 @@ static NSString * const kImageContentMode	= @"kImageContentMode";
 	self = [super init];
 	
 	if (self) {
-		self.title = @"Tables";
+		self.title = NSLocalizedString(@"Tables", comment: @"");
 		self.edgesForExtendedLayout = UIRectEdgeNone;
 		self.tabBarItem.image = [UIImage imageNamed:@"icon-table"];
 	}
